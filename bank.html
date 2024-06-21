@@ -14,15 +14,15 @@
         <section class="grid grid-cols-3 gap-5">
             <div class="bg-green-500 rounded text-white p-6">
                 <h3 class="font-semibold text-lg">Deposit</h3>
-                <h2 class="font-semibold text-2xl">$ <span id="total-deposit">025</span></h2>
+                <h2 class="font-semibold text-2xl">$ <span id="total-deposit">0.00</span></h2>
             </div>
             <div class="bg-pink-300 rounded text-white p-6">
                 <h3 class="font-semibold text-lg">Withdraw</h3>
-                <h2 class="font-semibold text-2xl">$ <span>0</span></h2>
+                <h2 class="font-semibold text-2xl">$ <span id="total-withdraw">0.00</span></h2>
             </div>
             <div class="bg-orange-600 rounded text-white p-6">
                 <h3 class="font-semibold text-lg">Balance</h3>
-                <h2 class="font-semibold text-2xl">$ <span>1000</span></h2>
+                <h2 class="font-semibold text-2xl">$ <span id="total-balance">1000</span></h2>
             </div>
         </section>
         <section class="grid grid-cols-2 gap-5">
@@ -36,8 +36,8 @@
             <div class="bg-indigo-400 p-5 text-white space-y-3 rounded">
                 <h1 class="text-2xl font-semibold">Please Withdraw</h1>
                 <div class="space-y-4 px-8">
-                    <input type="text" class="text-black border-2 rounded pl-2 block w-full" id="withdraw" placeholder="$ amount you want to withdraw">
-                    <button  class=" bg-blue-700 text-white px-5 py-1 rounded" >Withdraw</button>
+                    <input type="text" class="text-black border-2 rounded pl-2 block w-full" id="withdraw-amount" placeholder="$ amount you want to withdraw">
+                    <button id="btn-withdraw" class=" bg-blue-700 text-white px-5 py-1 rounded" >Withdraw</button>
                 </div>
             </div>
         </section>
