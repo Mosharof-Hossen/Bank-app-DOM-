@@ -1,36 +1,42 @@
+// Deposit section
 document.getElementById('btn-deposit').addEventListener('click', () => {
-    let depositAmount = parseFloat(parseFloat(document.getElementById("deposit-amount").value).toFixed(2));
+    const newDepositValue = getInputFieldValueById('deposit-amount');
+    const currentDepositValue = getDepositWithDrawBalanceValueById("total-deposit");
 
-    if (depositAmount) {
-        let totalDeposit = document.getElementById("total-deposit").innerText;
-        document.getElementById('total-deposit').innerText = parseFloat(totalDeposit) + depositAmount;
-        let totalBalance = document.getElementById("total-balance").innerText;
-        document.getElementById("total-balance").innerText = parseFloat(totalBalance) + depositAmount;
-    }
-    else {
-        alert("Enter Amount");
+    if (isNaN(newDepositValue)) {
+        alert("Enter Amount .....")
+        return
     }
 
-    document.getElementById("deposit-amount").value = '';
+    const newDepositTotal = newDepositValue + currentDepositValue;
+    setValueById("total-deposit", newDepositTotal);
+
+    const currentBalanceValue = getDepositWithDrawBalanceValueById("total-balance");
+    const newBalanceValue = currentBalanceValue + newDepositValue;
+    setValueById("total-balance", newBalanceValue);
 })
 
+// WithDraw 
 document.getElementById('btn-withdraw').addEventListener('click', () => {
-    let withdrawAmount = parseFloat(parseFloat(document.getElementById("withdraw-amount").value).toFixed(2));
+    const newWithdrawValue = getInputFieldValueById('withdraw-amount');
+    const currentWithdrawValue = getDepositWithDrawBalanceValueById("total-withdraw");
 
-    if (withdrawAmount) {
-        let totalBalance = document.getElementById("total-balance").innerText;
-        let balanceBalance = parseFloat(totalBalance) - withdrawAmount;
-        if (balanceBalance >= 0) {
-            let totalWithdraw = document.getElementById("total-withdraw").innerText;
-            document.getElementById('total-withdraw').innerText = parseFloat(totalWithdraw) + withdrawAmount;
-            document.getElementById("total-balance").innerText = balanceBalance;
-        }
-        else{
-            alert("Low Balance");
-        }
+
+
+    const newWithdrawTotal = newWithdrawValue + currentWithdrawValue;
+    const currentBalanceValue = getDepositWithDrawBalanceValueById("total-balance");
+    const newBalanceValue = currentBalanceValue - newWithdrawValue;
+
+    if (isNaN(newWithdrawValue)) {
+        alert("Enter Amount .....");
+        return
+    } else if (newBalanceValue < 0) {
+        alert("Low Balance");
+    } else {
+        setValueById("total-withdraw", newWithdrawTotal);
+        setValueById("total-balance", newBalanceValue);
     }
-    else {
-        alert("Enter Amount");
-    }
-    document.getElementById("withdraw-amount").value = '';
 })
+
+
+
