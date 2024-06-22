@@ -10,6 +10,8 @@ document.getElementById('btn-deposit').addEventListener('click', () => {
     else {
         alert("Enter Amount");
     }
+
+    document.getElementById("deposit-amount").value = '';
 })
 
 document.getElementById('btn-withdraw').addEventListener('click', () => {
@@ -30,4 +32,5 @@ document.getElementById('btn-withdraw').addEventListener('click', () => {
     else {
         alert("Enter Amount");
     }
+    document.getElementById("withdraw-amount").value = '';
 })

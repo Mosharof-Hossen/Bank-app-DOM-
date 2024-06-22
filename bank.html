@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bank Section</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body{
+            min-height: 100vh;
+        }
+    </style>
 </head>
-<body class="bg-emerald-100">
+
+
+
+<body class="bg-emerald-100 relative">
     <header>
-        <h1 class="text-5xl text-center my-10">Welcome to <span class=" font-semibold text-blue-500">Joy Bangla</span> Bank!!</h1>
+        <h1 class="text-5xl text-center my-10">Welcome to <span class=" font-semibold text-blue-500">Joy Bangla</span>
+            Bank!!</h1>
     </header>
-    <main class="max-w-6xl mx-auto space-y-10">
+    <main class="max-w-6xl mx-auto space-y-10 flex-1">
         <section class="grid grid-cols-3 gap-5">
             <div class="bg-green-500 rounded text-white p-6">
                 <h3 class="font-semibold text-lg">Deposit</h3>
@@ -29,20 +40,27 @@
             <div class="bg-blue-400 p-5 text-white space-y-3 rounded">
                 <h1 class="text-2xl font-semibold">Please Deposit</h1>
                 <div class="space-y-4 px-8">
-                    <input type="text" class=" text-black border-2 rounded pl-2 block w-full" id="deposit-amount" placeholder="$ amount you want to deposit">
-                    <button id="btn-deposit" class=" bg-blue-700 text-white px-5 py-1 rounded" >Deposit</button>
+                    <input type="text" class=" text-black border-2 rounded pl-2 block w-full" id="deposit-amount"
+                        placeholder="$ amount you want to deposit">
+                    <button id="btn-deposit"
+                        class=" bg-blue-600 hover:bg-blue-700 text-white px-5 py-1 rounded">Deposit</button>
                 </div>
             </div>
             <div class="bg-indigo-400 p-5 text-white space-y-3 rounded">
                 <h1 class="text-2xl font-semibold">Please Withdraw</h1>
                 <div class="space-y-4 px-8">
-                    <input type="text" class="text-black border-2 rounded pl-2 block w-full" id="withdraw-amount" placeholder="$ amount you want to withdraw">
-                    <button id="btn-withdraw" class=" bg-blue-700 text-white px-5 py-1 rounded" >Withdraw</button>
+                    <input type="text" class="text-black border-2 rounded pl-2 block w-full" id="withdraw-amount"
+                        placeholder="$ amount you want to withdraw">
+                    <button id="btn-withdraw"
+                        class=" bg-blue-600 hover:bg-blue-700 text-white px-5 py-1 rounded">Withdraw</button>
                 </div>
             </div>
         </section>
     </main>
-
+    <footer class="bg-slate-300 absolute bottom-0 w-full">
+        <h1 class="text-center p-4">June 22, 2024. Developed by <span class="text-blue-800 font-bold">Mosharof Hossen</span></h1>
+    </footer>
     <script src="./JS/bank.js"></script>
 </body>
+
 </html>
